@@ -24,13 +24,13 @@ public class Weighted_Quick_Union_Path_Compression {
         int parentP = findParent(p);
         int parentQ = findParent(q);
         if (parentP != parentQ) {
-            if (weight[p] > weight[q]) {
+            if (weight[parentP] > weight[parentQ]) {
                 array[parentQ] = parentP;
-                weight[p] += weight[q];
+                weight[parentP] += weight[parentQ];
             }
             else {
                 array[parentP] = parentQ;
-                weight[q] += weight[p];
+                weight[parentQ] += weight[parentP];
             }
         }
     }

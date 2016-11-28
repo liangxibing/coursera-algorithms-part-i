@@ -8,6 +8,10 @@ import edu.princeton.cs.algs4.WeightedQuickUnionUF;
 
 public class Percolation {
 
+    private static final byte OPENBIT = 0x01;
+    private static final byte TOPBIT = 0x02;
+    private static final byte BOTTOMBIT = 0x04;
+
     private WeightedQuickUnionUF uf;
     private int side;
     /* array of byte to control whether a site is open/blocked, whether it is 
@@ -18,9 +22,6 @@ public class Percolation {
      */
     private byte[] status;
     private boolean isPercolated;
-    private static final byte OPENBIT = 0x01;
-    private static final byte TOPBIT = 0x02;
-    private static final byte BOTTOMBIT = 0x04;
 
     // create n-by-n grid, with all sites blocked
     public Percolation(int n) {
